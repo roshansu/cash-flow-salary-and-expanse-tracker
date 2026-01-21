@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+
+</head>
+<body>
+
+    <!-- HAMBURGER MENU -->
+     <i id="hamburger" class="fa-solid fa-bars"></i>
+
+    <!-- EXPANSE BUTTON -->
+
+    <button class="expanseButton" type="button">
+            <i class="fa-solid fa-plus "></i>
+            Add
+    </button>
+
+    <!-- FORM -->
+    <div class="formDiv">
+        <form   action="#">
+            <i class="fa-solid fa-x close"></i>
+            <div id="salaryAmt">
+                <label for="salaryInput">Enter salary amount</label>
+                <input required id="salaryInput" name="salaryInput" type="number">
+            </div>
+            <div>
+                <label for="expanseInput">Enter expanse amount</label>
+                <input required id="expanseInput" name="expanseInput" type="number">
+            </div>
+
+            <div>
+                <label for="remarksInput">Enter remarks</label>
+                <input required id="remarksInput" name="remarksInput" type="text">
+            </div>
+
+            <button  class="addExpanse" type="submit">
+                <i class="fa-solid fa-plus add"></i>
+                Add
+            </button>
+        </form>
+    </div>
+
+    <!-- SIDEBAR -->
+     <div class="sidebar">
+        <i id="closeMenu" class="fa-solid fa-x"></i>
+
+        <div class="monthTitle">MONTHS</div>
+        <ul class="monthList">
+            <!-- <li>
+                <p>January</p>
+                <i class="fa-solid fa-trash deleteMonth"></i>
+            </li>
+            <li>
+                <p>January</p>
+                <i  class="fa-solid fa-trash deleteMonth"></i>
+            </li>
+            <li>
+                <p>January</p>
+                <i class="fa-solid fa-trash deleteMonth"></i>
+            </li> -->
+        </ul>
+
+        <input id="monthName" type="text" placeholder="Month name">
+        <button class="addMonth" type="button">
+            <i class="fa-solid fa-plus add"></i>
+            Add
+        </button>
+     </div>
+
+     <!-- MAIN -->
+
+     <div class="main">
+        
+        <!-- HEADER 1 -->
+        <div class="header1">
+            <h1 class="salary">Input salary</h1>
+            <button id="pdfBtn" type="button" >Export PDF</button>
+            <button id="visualize" type="button">Visualize</button>
+
+        </div>
+        <!-- HEADER 2 -->
+         <div class="header2">
+            <h2 class="remainingAmnt">Remaining amount - </h2>
+            <h2 class="totalExpanse">Total expanses - </h2>
+         </div>
+         <!-- PIE CHART -->
+           <div class="pie">
+            <canvas id="myChart"></canvas>
+            <button id="closeChart" type="button">Close</button>
+           </div>
+        <!-- EXPANSE LIST -->
+        <ol class="expanse">
+            <h1 class="msg">Try adding month first or click on month</h1>
+            <!-- <li class="expanseList">
+                <h4 class="expanseAmnt">$100</h4>
+                <h4 class="remarks">Remarks</h4>
+                <i class="fa-solid fa-trash deleteExpanse"></i>
+            </li> -->
+        </ol>
+     </div>
+
+     
+    <script src="./script.js"></script>
+</body>
+</html>

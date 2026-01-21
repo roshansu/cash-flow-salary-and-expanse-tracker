@@ -1,0 +1,501 @@
+/* *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.sidebar{
+    width: 15%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    color: #475569;
+    font-size: 18px;
+    position: relative;
+    border-right: 2px solid black;
+}
+.monthTitle{
+    background-color: white;
+    color:  black;
+    border-bottom: 1px solid gray;
+    font-size: large;
+    font-weight: 900;
+    padding: 12px;
+    text-align: center;
+}
+
+.sidebar>ul>li{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px;
+    background-color: #EEEEEE;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.sidebar>ul>li:hover{
+    background-color:  #CBCBCB;
+}
+
+
+.deleteMonth{
+    font-size: 13px;
+    padding: 5px;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.deleteMonth:hover{
+    background-color:cornsilk;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+.addMonth{
+    position: absolute;
+    bottom: 0;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: #6366F1;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.addMonth:hover{
+    background-color: #4F46E5;
+}
+
+.main{
+    width: 85%;
+}
+
+.header1{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+}
+
+.salary{
+    background-color: #ECFEFF;
+    color: #0369A1;
+    padding: 5px 10px 5px 10px;
+
+} */
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#F6F8FC;
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:260px;
+    background:#FFFFFF;
+    padding:20px;
+    box-shadow:2px 0 10px rgba(0,0,0,0.05);
+}
+
+.monthTitle{
+    background:#E0E7FF;
+    color:#3730A3;
+    text-align:center;
+    padding:10px;
+    border-radius:8px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+    border-radius:8px;
+    margin-bottom:8px;
+    background:#F9FAFB;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sidebar ul li:hover{
+    background:#EEF2FF;
+}
+
+
+.sidebar ul li p{
+    color:#475569;
+}
+
+.deleteMonth{
+    color:#EF4444;
+    cursor:pointer;
+}
+
+/* ADD MONTH BUTTON */
+.addMonth{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#6366F1;
+    color:#FFFFFF;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#monthName{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    background-color: #f2f2ef;
+    border: 1px solid gray;
+    border-radius:8px;
+
+}
+
+.addMonth:hover{
+    background:#4F46E5;
+}
+
+.add{
+    margin-right:5px;
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    padding:25px;
+}
+
+/* HEADER 1 */
+.header1{
+    background:#EEF2FF;
+    padding:15px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.salary{
+    color:#22C55E;
+}
+
+#currencyOption{
+    padding:6px 10px;
+    border-radius:6px;
+    border:1px solid #CBD5E1;
+    outline:none;
+}
+
+.header1 button{
+    padding:8px 15px;
+    border:none;
+    border-radius:6px;
+    background:#6366F1;
+    color:white;
+    font-weight: 600;
+    cursor:pointer;
+}
+
+.header1 button:hover{
+    background:#4F46E5;
+}
+
+/* HEADER 2 */
+.header2{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.remainingAmnt{
+    flex:1;
+    background:#ECFEFF;
+    color:#0369A1;
+    padding:12px;
+    border-radius:10px;
+}
+
+.totalExpanse{
+    flex:1;
+    background:#FEF2F2;
+    color:#B91C1C;
+    padding:12px;
+    border-radius:10px;
+}
+
+/* EXPENSE LIST */
+.expanse{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+}
+
+.expanseList{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+    border-bottom:1px solid #E5E7EB;
+}
+
+.expanseList:last-child{
+    border-bottom:none;
+}
+
+.expanseAmnt{
+    color:#EF4444;
+}
+
+.remarks{
+    color:#475569;
+}
+
+.deleteExpanse{
+    color:#EF4444;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    body{
+        flex-direction:column;
+    }
+
+    /* .sidebar{
+        width:100%;
+    } */
+
+    .header2{
+        flex-direction:column;
+    }
+}
+
+/* FORM */
+form{
+    background:#FFFFFF;
+    padding:20px;
+    border-radius:12px;
+    /* width: 20%; */
+    position: absolute;
+    z-index: 50;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.close{
+    position: absolute;
+    right: 5px;
+   top: 7px;
+   cursor: pointer;
+   color: red;
+}
+
+/* INPUT GROUP */
+form div{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:15px;
+}
+
+form label{
+    margin-bottom:6px;
+    color:#334155;
+    font-weight:500;
+}
+
+/* INPUT */
+form input{
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #CBD5E1;
+    outline:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+/* #salaryAmt{
+    display: none;
+} */
+
+form input:focus{
+    border-color:#6366F1;
+    box-shadow:0 0 0 2px rgba(99,102,241,0.2);
+}
+
+/* ADD BUTTON */
+.addExpanse{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#6366F1;
+    color:#FFFFFF;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.addExpanse:hover{
+    background:#4F46E5;
+}
+
+.add{
+    margin-right:5px;
+}
+
+.formDiv{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    opacity: 0.8;
+    background-color: black;
+}
+
+/* MOBILE */
+
+
+.expanseButton{
+    background-color: #005461;
+    /* display: none; */
+    transition: all;
+    transition-duration: 200ms;
+    color: white;
+    font-weight: 700;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    text-align: center;
+    height: 70px;
+    width: 70px;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.expanseButton:hover{
+    background-color: #215E61;
+}
+
+#hamburger{
+    display: none;
+}
+
+#closeMenu{
+    display: none;
+}
+
+canvas{
+    height: 500px !important;
+    width: 500px !important;
+}
+
+.pie{
+    display: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.pie > button{
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background-color: #EF4444;
+    color: white;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+#pdfBtn{
+    background-color: #3730A3;
+    color: white;
+    font-weight: 700;
+}
+
+@media(max-width:768px){
+    form{
+        padding:15px;
+    }
+
+    #hamburger{
+        position: fixed;
+        top: 7px;
+        left: 7px;
+        font-size: larger;
+        display: block;
+    }
+
+    canvas{
+        height: 300px !important;
+        width: 300px !important;
+    }
+
+    .sidebar{
+        height: 100vh;
+        position: fixed;
+        overflow-y: scroll;
+        display: none;
+    }
+
+    #closeMenu{
+        position: absolute;
+        top: 2px;
+        right: 7px;
+        display: inline;
+    }
+
+    .salary{
+        font-size: large;
+    }
+
+    .header2 > h2{
+        font-size: large;
+    }
+
+    .expanseButton{
+        height: 50px;
+        width: 50px;
+        font-size: small;
+        bottom: 15px;
+        right: 15px;
+        padding: 0 5px 0px 5px;
+    }
+}
