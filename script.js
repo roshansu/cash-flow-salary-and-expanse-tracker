@@ -214,6 +214,7 @@ function setData(data){
 
 
 pdfBtn.addEventListener('click', ()=>{
+    if(Object.keys(data).length === 0) return alert("No data avaialable")
     exportPDF(data)
 })
 
@@ -232,6 +233,10 @@ closeChart.addEventListener('click', ()=>{
 })
 
 visualize.addEventListener('click', ()=>{
+    if(currMonth === ''){
+        alert("No data available")
+        return
+    }
     document.querySelector('.pie').style.display = 'flex'
     new Chart(ctx, {
         type: 'pie',
@@ -254,6 +259,7 @@ visualize.addEventListener('click', ()=>{
 
 expanseButton.addEventListener('click', ()=>{
     console.log("currmonth", currMonth)
+    if(currMonth === '') return alert('Add month or click on month first')
     if(data[currMonth][0]?.salary){
         salaryDiv.style.display = 'none'
         salaryInput.required = false;
@@ -412,7 +418,8 @@ function createMonth(month){
 monthList.addEventListener('click', (e)=>{
     if(e.target.tagName != 'LI') return
 
-    // document.querySelector('.sidebar').style.display = 'none'
+    if(( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ))
+        document.querySelector('.sidebar').style.display = 'none'
     const element = e.target
     const elementId = element.id
     currMonth = elementId
