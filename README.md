@@ -26,7 +26,7 @@ A simple and interactive **Cashflow Dashboard** built using **HTML, CSS, and Jav
 
 ## Demo
 
-You can see a live demo of the dashboard [here](shflowtracke.netlify.app).
+You can see a live demo of the dashboard [here](https://shflowtracke.netlify.app).
 
 ---
 
